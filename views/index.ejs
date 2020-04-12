@@ -1,0 +1,49 @@
+ <!DOCTYPE html>
+<html>
+  <head>
+
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel='stylesheet' href='../stylesheets/css/uikit.min.css'/>
+    <link rel='stylesheet' href='../stylesheets/css/addon-uikit.css'/>
+  </head>
+  <body>
+    <nav class="uk-navbar-container" uk-navbar>
+      <div class="uk-navbar-left">
+        <ul class="uk-navbar-nav">
+            <li class="uk-active"><a href="/">Ver Gastos</a></li>
+            <li class="uk-active"><a href="/new">Cadastrar Gasto</a></li>
+        </ul>
+      </div>
+    </nav>
+    <div class="uk-container uk-margin-medium">
+    <h1><%= title %></h1>
+    <table class="uk-table uk-table-hover uk-table-divider">
+      <thead>
+          <tr>
+              <th>Prouto</th>
+              <th>Preço</th>
+              <th>Action</th>
+          </tr>
+      </thead>
+      <tbody>
+        <% docs.forEach(function(customer){ %>
+          <tr>
+              <td><%= customer.produto %></td>
+              <td><%= customer.preco %></td>
+              <td><p class="uk-column-1-2"><a href="/delete/<%= customer._id %>" onclick="return confirm('Tem certeza que deseja excluir?');" uk-icon="icon: trash" class="uk-button uk-button-danger"></a>
+                <a href="/edit/<%= customer._id %>" uk-icon="icon: pencil" class="uk-button uk-button-primary"></a></p></td>
+          </tr>
+        <% }) %>
+      </tbody>
+    </table>
+    
+    <hr class="uk-divider-icon"/>
+
+    
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit-icons.min.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
+  </body>
+</html>

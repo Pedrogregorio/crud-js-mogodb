@@ -1,0 +1,55 @@
+<!-- <!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+  </head>
+  <body>
+    <h1><%= title %></h1>
+    <form action="<%= action %>" method="POST">
+      <p>Nome:<input type="text" name="nome" value="<%= doc.nome %>" /></p>
+      <p>Idade:<input type="text" name="idade" value="<%= doc.idade %>" /></p>
+      <input type="submit" value="Salvar" />
+    </form>
+  </body>
+</html> -->
+<!DOCTYPE html>
+<html>
+  <head>
+    <title><%= title %></title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <link rel='stylesheet' href='../stylesheets/css/uikit.min.css'/>
+    <link rel='stylesheet' href='../stylesheets/css/addon-uikit.css'/>
+  </head>
+  <body>
+    
+    <nav class="uk-navbar-container" uk-navbar>
+      <div class="uk-navbar-left">
+        <ul class="uk-navbar-nav">
+            <li class="uk-active"><a href="/">Ver Clientes</a></li>
+            <li class="uk-active"><a href="/new">Cadastrar cliente</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <div class="uk-container uk-margin-medium">
+    <h1><%= title %></h1>
+    <form action="<%= action %>" method="POST">
+      <div class="uk-margin">
+        <input class="uk-input uk-form-width-large" type="text" name="produto" placeholder="Produto" value="<%= doc.produto %>">
+      </div>
+      <div class="uk-margin">
+        <input class="uk-input uk-form-width-large" type="number" step="0.01" name="preco" placeholder="Valor do Produto R$" value="<%= doc.preco %>">
+      </div>
+      <div class="uk-margin">
+        <input type="submit" value="Salvar" class="uk-button uk-button-primary">
+      </div>
+      
+    </form>
+    </div>
+    <script src="../public/stylesheets/js/uikit-icons.min.js"></script>
+    <script src="../public/stylesheets/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.3.7/dist/js/uikit-icons.min.js"></script>
+  </body>
+</html>  
